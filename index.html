@@ -817,5 +817,13 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
             stepsObserver.observe(stepsSection);
         }
     </script>
+    <script>
+  if (sessionStorage.redirect) {
+    const url = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    history.replaceState(null, null, url);
+  }
+</script>
+
 </body>
 </html>
