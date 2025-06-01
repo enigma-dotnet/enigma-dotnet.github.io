@@ -817,12 +817,18 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
             stepsObserver.observe(stepsSection);
         }
     </script>
-    <script>
-  if (sessionStorage.redirect) {
-    const url = sessionStorage.redirect;
-    delete sessionStorage.redirect;
-    history.replaceState(null, null, url);
+  <script>
+  // Lista di URL validi
+  const validSlugs = ['/', '/index.html', '/docs', '/examples', '/download'];
+
+  const currentPath = window.location.pathname;
+
+  // Se lo slug non è valido, reindirizza a 404.html
+  if (!validSlugs.includes(currentPath)) {
+    window.location.href = '/404.html';
   }
+</script>
+
 </script>
 
 </body>
