@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Documentazione | Netiqo Framework</title>
+  <title>Documentation | Netiqo Framework</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -418,8 +418,8 @@
     <div class="container">
       <div class="header-content">
         <h1>Netiqo Framework</h1>
-        <p>Documentazione completa per il micro-framework .NET self-hosted</p>
-        <a href="https://netiqoframework.com" class="back-btn">← Torna al Sito Principale</a>
+        <p>Complete documentation for the self-hosted .NET micro-framework</p>
+        <a href="https://netiqoframework.com" class="back-btn">← Back to Main Site</a>
       </div>
     </div>
   </header>
@@ -428,8 +428,8 @@
   <section class="quick-start">
     <div class="container">
       <div class="section-title">
-        <h2>🚀 Avvio Rapido</h2>
-        <p>Crea il tuo primo server web self-hosted in pochi minuti</p>
+        <h2>🚀 Quick Start</h2>
+        <p>Create your first self-hosted web server in minutes</p>
       </div>
       
       <div class="code-container">
@@ -459,12 +459,12 @@
     <div class="container">
       <div class="section">
         <div class="section-title">
-          <h2>📍 Struttura del Framework</h2>
-          <p>Componenti principali e API per lo sviluppo</p>
+          <h2>📍 Framework Structure</h2>
+          <p>Main components and API for development</p>
         </div>
         
-        <h3>Classe Host</h3>
-        <p>Classe principale per la gestione del web server con supporto HTTPS opzionale.</p>
+        <h3>Host Class</h3>
+        <p>Main class for web server management with optional HTTPS support.</p>
         
         <div class="code-container">
           <div class="code-header">
@@ -478,8 +478,8 @@
           <pre><code><span class="keyword">public</span> <span class="function">Host</span>(<span class="keyword">string</span> ip, <span class="keyword">int</span> port, <span class="keyword">string</span> certPath = <span class="keyword">null</span>, <span class="keyword">string</span> certPassword = <span class="keyword">null</span>)</code></pre>
         </div>
 
-        <h3>Classe Route</h3>
-        <p>Definizione delle route con supporto per handler dinamici o risposte HTML statiche.</p>
+        <h3>Route Class</h3>
+        <p>Route definition with support for dynamic handlers or static HTML responses.</p>
         
         <div class="code-container">
           <div class="code-header">
@@ -496,7 +496,7 @@
         </div>
 
         <h3>RouteAttribute</h3>
-        <p>Decoratore per definire route direttamente sui metodi delle classi controller.</p>
+        <p>Decorator for defining routes directly on methods of controller classes.</p>
         
         <div class="code-container">
           <div class="code-header">
@@ -512,15 +512,15 @@
         </div>
 
         <h3>HttpMethod Support</h3>
-        <p>Supporto completo per tutti i metodi HTTP standard:</p>
+        <p>Full support for all standard HTTP methods:</p>
         <ul>
           <li>GET, POST, PUT, DELETE</li>
           <li>PATCH, HEAD, TRACE</li>
           <li>OPTIONS, CONNECT</li>
         </ul>
 
-        <h3>Classe Device</h3>
-        <p>Utility per ottenere informazioni di rete e configurazioni predefinite.</p>
+        <h3>Device Class</h3>
+        <p>Utility to obtain network information and default configurations.</p>
         
         <div class="code-container">
           <div class="code-header">
@@ -543,12 +543,12 @@
     <div class="container">
       <div class="section">
         <div class="section-title">
-          <h2>🔍 Routing Dinamico e Statico</h2>
-          <p>Flessibilità massima nella definizione delle route</p>
+          <h2>🔍 Dynamic and Static Routing</h2>
+          <p>Maximum flexibility in route definition</p>
         </div>
         
-        <h3>HTML Statico</h3>
-        <p>Perfetto per pagine informative o contenuto che non cambia frequentemente.</p>
+        <h3>Static HTML</h3>
+        <p>Perfect for informational pages or content that does not change frequently.</p>
         
         <div class="code-container">
           <div class="code-header">
@@ -563,8 +563,8 @@
     htmlResponse: <span class="string">"&lt;h1&gt;Chi siamo&lt;/h1&gt;"</span>));</code></pre>
         </div>
 
-        <h3>Handler Dinamico</h3>
-        <p>Per contenuto che richiede elaborazione server-side e interazione con dati.</p>
+        <h3>Dynamic Handler</h3>
+        <p>For content that requires server-side processing and interaction with data.</p>
         
         <div class="code-container">
           <div class="code-header">
@@ -582,8 +582,8 @@
 }));</code></pre>
         </div>
 
-        <h3>Configurazione da JSON</h3>
-        <p>Carica le route da file JSON esterni per una gestione più flessibile.</p>
+        <h3>Configuration from JSON</h3>
+        <p>Load routes from external JSON files for more flexible management.</p>
         
         <div class="code-container">
           <div class="code-header">
@@ -612,10 +612,10 @@
       <!-- HTTPS Support -->
       <div class="section">
         <div class="section-title">
-          <h2>🔐 Supporto HTTPS</h2>
-          <p>Connessioni sicure con certificati SSL/TLS</p>
+          <h2>🔐 HTTPS Support</h2>
+          <p>Secure connections with SSL/TLS certificates</p>
         </div>
-        <p>Configura facilmente connessioni sicure utilizzando certificati PFX per ambienti di produzione.</p>
+        <p>Easily configure secure connections using PFX certificates for production environments.</p>
         
         <div class="code-container">
           <div class="code-header">
@@ -634,10 +634,10 @@
       <!-- Static Files -->
       <div class="section">
         <div class="section-title">
-          <h2>📃 File Statici</h2>
-          <p>Servizio automatico di risorse statiche</p>
+          <h2>📃 Static Files</h2>
+          <p>Automatic service of static resources</p>
         </div>
-        <p>I file nella cartella <code>wwwroot/</code> vengono serviti automaticamente dal server, permettendo di distribuire CSS, JavaScript, immagini e altri asset necessari alla tua applicazione.</p>
+        <p>The files in the <code>wwwroot/</code> are automatically served by the server, allowing you to distribute CSS, JavaScript, images and other assets needed by your application.</p>
         
         <div class="code-container">
           <div class="code-header">
@@ -646,7 +646,7 @@
               <div class="dot yellow"></div>
               <div class="dot green"></div>
             </div>
-            <div class="code-title">Struttura Cartelle</div>
+            <div class="code-title">Folder structure</div>
           </div>
           <pre><code>📁 Progetto/
 ├── 📁 wwwroot/
@@ -663,10 +663,10 @@
       <!-- Events and Logging -->
       <div class="section">
         <div class="section-title">
-          <h2>📅 Eventi e Logging</h2>
-          <p>Sistema di logging flessibile e personalizzabile</p>
+          <h2>📅 Events and Logging</h2>
+          <p>Flexible and customizable logging system</p>
         </div>
-        <p>Sistema di logging flessibile che permette di intercettare e gestire tutti gli eventi del server.</p>
+        <p>Flexible logging system to intercept and manage all server events.</p>
         
         <div class="code-container">
           <div class="code-header">
@@ -679,7 +679,7 @@
           </div>
           <pre><code><span class="variable">host</span>.LogMessage += msg => Console.<span class="function">WriteLine</span>(<span class="string">"[LOG] "</span> + msg);
 
-<span class="comment">// Logging avanzato con timestamp</span>
+<span class="comment">// Advanced logging with timestamps</span>
 <span class="variable">host</span>.LogMessage += msg => {
     <span class="keyword">var</span> timestamp = DateTime.Now.<span class="function">ToString</span>(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);
     Console.<span class="function">WriteLine</span>(<span class="string">$"[{timestamp}] {msg}"</span>);
@@ -690,24 +690,24 @@
       <!-- Deployment -->
       <div class="section">
         <div class="section-title">
-          <h2>📂 Scenari di Deployment</h2>
-          <p>Versatile per ogni tipo di applicazione</p>
+          <h2>📂 Deployment Scenarios</h2>
+          <p>Versatile for all kinds of applications</p>
         </div>
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">💻</div>
-            <h3>Applicazioni Embedded</h3>
-            <p>Integra server web direttamente nelle tue applicazioni desktop o IoT</p>
+            <h3>Embedded Applications</h3>
+            <p>Integrate web servers directly into your desktop or IoT applications</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">🏠</div>
-            <h3>Backend Locali</h3>
-            <p>Crea API e servizi accessibili dalla rete locale senza configurazioni complesse</p>
+            <h3>Local Backend</h3>
+            <p>Create APIs and services accessible from the local network without complex configurations</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">🔧</div>
-            <h3>Microservizi</h3>
-            <p>Sviluppa microservizi leggeri per architetture distribuite</p>
+            <h3>Microservices</h3>
+            <p>Develops lightweight microservices for distributed architectures</p>
           </div>
         </div>
       </div>
@@ -717,7 +717,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <p>&copy; 2025 Netiqo Framework | Rilasciato sotto <a href="https://netiqoframework.com/license" target="_blank">licenza MIT</a></p>
+        <p>&copy; 2025 Netiqo Framework | Released under <a href="https://netiqoframework.com/license" target="_blank">license</a></p>
       </div>
     </div>
   </footer>
