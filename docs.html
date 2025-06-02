@@ -577,7 +577,7 @@
             <div class="code-title">Static HTML Route</div>
           </div>
           <pre><code><span class="variable">host</span>.<span class="function">RegisterRoute</span>(<span class="keyword">new</span> <span class="function">Route</span>(<span class="string">"/about"</span>, Request.HttpMethod.GET, 
-    htmlResponse: <span class="string">"&lt;h1&gt;Chi siamo&lt;/h1&gt;"</span>));</code></pre>
+    htmlResponse: <span class="string">"&lt;h1&gt;About Us&lt;/h1&gt;"</span>));</code></pre>
         </div>
 
         <h3>Dynamic Handler</h3>
@@ -595,7 +595,7 @@
           <pre><code><span class="variable">host</span>.<span class="function">RegisterRoute</span>(<span class="keyword">new</span> <span class="function">Route</span>(<span class="string">"/login"</span>, Request.HttpMethod.POST, <span class="keyword">async</span> body =>
 {
     <span class="keyword">var</span> parsed = HttpUtility.<span class="function">ParseQueryString</span>(body);
-    <span class="keyword">return</span> <span class="string">$"&lt;h1&gt;Benvenuto {parsed["username"]}&lt;/h1&gt;"</span>;
+    <span class="keyword">return</span> <span class="string">$"&lt;h1&gt;Welcome {parsed["username"]}&lt;/h1&gt;"</span>;
 }));</code></pre>
         </div>
 
@@ -644,7 +644,7 @@
             <div class="code-title">HTTPS Configuration</div>
           </div>
           <pre><code><span class="keyword">var</span> <span class="variable">host</span> = <span class="keyword">new</span> <span class="function">Host</span>(<span class="string">"127.0.0.1"</span>, <span class="number">443</span>, 
-    <span class="string">"certificati/miosito.pfx"</span>, <span class="string">"mypassword"</span>);</code></pre>
+    <span class="string">"certificates/mysite.pfx"</span>, <span class="string">"mypassword"</span>);</code></pre>
         </div>
       </div>
 
