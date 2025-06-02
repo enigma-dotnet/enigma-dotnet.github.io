@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netiqo Framework - Micro-framework .NET per web server leggeri</title>
+    <title>Netiqo Framework - .NET micro-framework for lightweight web servers</title>
+
 
 <!-- Meta Description -->
-<meta name="description" content="Netiqo è un framework creato con l'idea di semplificare il lavoro degli sviluppatori. Tutto quello che fa Asp.Net Core in un piccolo framework. Scoprilo ora.">
+<meta name="description" content="Netiqo is a framework created with the idea of simplifying the work of developers. Everything Asp.Net Core does in a small framework. Discover it now.">
 
 <!-- Open Graph (Facebook, LinkedIn, Discord, ecc.) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Netiqo Framework">
-<meta property="og:description" content="il nuovo Framework moderno per API, microservizi e web-app. Veloce e leggero.">
+<meta property="og:description" content="The new modern Framework for APIs, microservices and web-apps. Fast and lightweight.">
 <meta property="og:url" content="https://netiqoframework.com/">
 <meta property="og:image" content="/assets/preview.jpeg">
     
     <link rel="icon" type="image/x-icon" href="/assets/icon.ico">
+
     <style>
         * {
             margin: 0;
@@ -35,6 +37,7 @@
             --white: #ffffff;
             --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
             --gradient-accent: linear-gradient(135deg, var(--accent), var(--primary));
+            --gradient-donation: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         }
         
         body {
@@ -210,7 +213,7 @@
             }
         }
         
-       /* Features Section */
+        /* Features Section */
         .features {
             padding: 8rem 0 5rem 0;
             background: var(--light);
@@ -417,6 +420,76 @@
             line-height: 1.6;
         }
         
+        /* Donation Section */
+        .donation-section {
+            padding: 4rem 0;
+            background: var(--gradient-donation);
+            color: white;
+            text-align: center;
+        }
+        
+        .donation-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .donation-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .donation-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-donate {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-donate:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        .btn-donate.small {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .paypal-icon {
+            font-size: 1.2rem;
+        }
+        
+        .supporters-note {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
         /* Footer */
         footer {
             background: var(--dark);
@@ -482,6 +555,11 @@
             .container {
                 padding: 0 1rem;
             }
+            
+            .donation-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
         
         /* Scrollbar */
@@ -510,9 +588,10 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#docs">Documentazione</a></li>
-                <li><a href="#examples">Esempi</a></li>
+                <li><a href="#docs">Documentation</a></li>
+                <li><a href="#examples">Examples</a></li>
                 <li><a href="#download">Download</a></li>
+                <li><a href="#donate">Donations</a></li>
             </ul>
         </nav>
     </header>
@@ -522,10 +601,10 @@
             <div class="container">
                 <div class="hero-content">
                     <h1>Netiqo Framework</h1>
-                    <p>Micro-framework .NET per costruire web server leggeri, self-hosted, con supporto a routing, HTTPS e file statici</p>
+                    <p>.NET micro-framework for building lightweight, self-hosted web servers with support for routing, HTTPS, and static files</p>
                     <div class="cta-buttons">
-                        <a href="#download" class="btn btn-primary">Scarica Ora</a>
-                        <a href="#docs" class="btn btn-secondary">Documentazione</a>
+                        <a href="#download" class="btn btn-primary">Download Now</a>
+                        <a href="#docs" class="btn btn-secondary">Documentation</a>
                     </div>
                 </div>
             </div>
@@ -534,39 +613,39 @@
         <section id="features" class="features">
             <div class="container">
                 <div class="section-title">
-                    <h2>Funzionalità Principali</h2>
-                    <p>Tutto quello che ti serve per creare web server embedded e locali professionali</p>
+                    <h2>Main Features</h2>
+                    <p>Everything you need to create professional embedded and local web servers</p>
                 </div>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">🚀</div>
-                        <h3>Self-Hosted Leggero</h3>
-                        <p>Crea server web embedded o locali accessibili via Wi-Fi o LAN senza configurazioni complesse.</p>
+                        <h3>Self-Hosted Lightweight</h3>
+                        <p>Create embedded or local web servers accessible via Wi-Fi or LAN without complex configurations.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🛣️</div>
-                        <h3>Routing Avanzato</h3>
-                        <p>Supporto completo per routing GET/POST con registrazione da codice, JSON, XML o attributi.</p>
+                        <h3>Advanced Routing</h3>
+                        <p>Full support for GET/POST routing with logging from code, JSON, XML or attributes.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🔐</div>
-                        <h3>HTTPS Integrato</h3>
-                        <p>Supporto nativo per certificati SSL/TLS con configurazione automatica via SslStream.</p>
+                        <h3>HTTPS Integrated</h3>
+                        <p>Native support for SSL/TLS certificates with automatic configuration via SslStream.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">📁</div>
-                        <h3>File Statici</h3>
-                        <p>Servizio automatico di file statici dalla cartella wwwroot/ per CSS, JS, immagini e altro.</p>
+                        <h3>Static Files</h3>
+                        <p>Automatic service of static files from the wwwroot/ folder for CSS, JS, images, and more.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">⚙️</div>
-                        <h3>Host Configurabile</h3>
-                        <p>Setup flessibile con IP, porta, certificati e logging personalizzabile per ogni esigenza.</p>
+                        <h3>Configurable Host</h3>
+                        <p>Flexible setup with customizable IP, port, certificates and logging for every need.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🎯</div>
-                        <h3>HTML Dinamico</h3>
-                        <p>Risposte HTML statiche o dinamiche con handler personalizzati e parsing dei form.</p>
+                        <h3>Dynamic HTML</h3>
+                        <p>Static or dynamic HTML responses with custom handlers and form parsing.</p>
                     </div>
                 </div>
             </div>
@@ -576,9 +655,9 @@
             <div class="container">
                 <div class="code-container">
                     <div class="code-content">
-                        <h2>Setup e Avvio Immediato</h2>
-                        <p>Con Netiqo Framework puoi creare un server web self-hosted in pochissime righe di codice. L'host si configura automaticamente e gestisce routing, HTTPS e file statici.</p>
-                        <p>Perfetto per applicazioni embedded, microservizi locali e server di sviluppo accessibili da tutta la rete Wi-Fi.</p>
+                        <h2>Setup and Instant Startup</h2>
+                        <p>With Netiqo Framework you can create a self-hosted web server in very few lines of code. The host automatically configures itself and handles routing, HTTPS and static files.</p>
+                        <p>Perfect for embedded applications, local microservices, and development servers accessible from across the Wi-Fi network.</p>
                     </div>
                     <div class="code-example">
                         <div class="code-header">
@@ -591,23 +670,23 @@
                         </div>
                         <pre><code><span class="keyword">using</span> Netiqo.Framework;
 
-<span class="comment">// Creazione dell'host</span>
+<span class="comment">// Host creation</span>
 <span class="keyword">var</span> host = <span class="keyword">new</span> Host(<span class="string">"127.0.0.1"</span>, <span class="number">8080</span>);
 
-<span class="comment">// Logging opzionale</span>
+<span class="comment">// Optional Logging</span>
 host.LogMessage += Console.WriteLine;
 
-<span class="comment">// Registrazione route manuale</span>
+<span class="comment">// Manual route registration</span>
 host.RegisterRoute(<span class="keyword">new</span> Route(<span class="string">"/"</span>, HttpMethod.GET, 
     htmlResponse: <span class="string">"&lt;h1&gt;Homepage&lt;/h1&gt;"</span>));
 
-<span class="comment">// Caricamento route da JSON</span>
+<span class="comment">// Loading route from JSON</span>
 host.LoadRoutesFromJson(<span class="string">"routes.json"</span>);
 
-<span class="comment">// Route tramite attributi</span>
+<span class="comment">// Route via attributes</span>
 host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController());
 
-<span class="comment">// Avvio del server</span>
+<span class="comment">// Starting the server</span>
 <span class="keyword">await</span> host.StartAsync();</code></pre>
                     </div>
                 </div>
@@ -617,30 +696,70 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
         <section id="docs" class="getting-started">
             <div class="container">
                 <div class="section-title">
-                    <h2>Come Iniziare</h2>
-                    <p>Segui questi semplici passaggi per avere il tuo server Netiqo up & running</p>
+                    <h2>How to Get Started</h2>
+                    <p>Follow these simple steps to get your Netiqo server up & running</p>
                 </div>
                 <div class="steps-grid">
                     <div class="step-card">
                         <div class="step-number">1</div>
-                        <h3>Installa Netiqo</h3>
-                        <p>Aggiungi Netiqo.Framework al tuo progetto .NET 6.0+ tramite NuGet o riferimento diretto</p>
+                        <h3>Install Netiqo</h3>
+                        <p>Add Netiqo.Framework to your .NET 6.0+ project via NuGet or direct reference</p>
                     </div>
                     <div class="step-card">
                         <div class="step-number">2</div>
-                        <h3>Crea l'Host</h3>
-                        <p>Configura l'host con IP, porta e opzionalmente certificati HTTPS per connessioni sicure</p>
+                        <h3>Create Host</h3>
+                        <p>Configures host with IP, port and optionally HTTPS certificates for secure connections</p>
                     </div>
                     <div class="step-card">
                         <div class="step-number">3</div>
-                        <h3>Registra le Route</h3>
-                        <p>Definisci le route tramite codice, JSON, XML o attributi sui controller per massima flessibilità</p>
+                        <h3>Register Routes</h3>
+                        <p>Define routes via code, JSON, XML or attributes on controllers for maximum flexibility</p>
                     </div>
                     <div class="step-card">
                         <div class="step-number">4</div>
-                        <h3>Avvia il Server</h3>
-                        <p>Lancia il server self-hosted e accedi da qualsiasi dispositivo della tua rete locale</p>
+                        <h3>Start the Server</h3>
+                        <p>Launch the self-hosted server and access it from any device on your local network</p>
                     </div>
+                </div>
+                 <div class="cta-buttons">
+                        <a href="/docs" class="btn btn-primary">Full Documentation</a>
+                    </div>
+            </div>
+        </section>
+
+        <section id="donate" class="donation-section">
+            <div class="container">
+                <div class="donation-content">
+                    <h2>❤️ Support Netiqo Framework</h2>
+                    <p>If Netiqo Framework has helped you in your projects, consider supporting the development with a small donation. Every contribution helps keep the project active and free for everyone.</p>
+                    
+                    <div class="donation-buttons">
+                        <a href="https://www.paypal.com/donate/?business=YOUR_PAYPAL_EMAIL&amount=5&currency_code=EUR" 
+                           class="btn-donate small" target="_blank" rel="noopener">
+                            <span class="paypal-icon">💳</span>
+                            Donation €5
+                        </a>
+                        <a href="https://www.paypal.com/donate/?business=YOUR_PAYPAL_EMAIL&amount=10&currency_code=EUR" 
+                           class="btn-donate" target="_blank" rel="noopener">
+                            <span class="paypal-icon">☕</span>
+                            Buy Me Coffee - €10
+                        </a>
+                        <a href="https://www.paypal.com/donate/?business=YOUR_PAYPAL_EMAIL&amount=25&currency_code=EUR" 
+                           class="btn-donate small" target="_blank" rel="noopener">
+                            <span class="paypal-icon">🚀</span>
+                            Support Pro - €25
+                        </a>
+                    </div>
+                    
+                    <div class="donation-buttons">
+                        <a href="https://www.paypal.com/donate/?business=YOUR_PAYPAL_EMAIL&currency_code=EUR" 
+                           class="btn-donate" target="_blank" rel="noopener">
+                            <span class="paypal-icon">💝</span>
+                            Custom Amount
+                        </a>
+                    </div>
+                    
+                    <p class="supporters-note">Thank you to all the supporters who make this project possible! 🙏</p>
                 </div>
             </div>
         </section>
@@ -648,8 +767,8 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
         <section class="code-section">
             <div class="container">
                 <div class="section-title" style="color: white;">
-                    <h2>Routing e Configurazione Avanzata</h2>
-                    <p style="color: #94a3b8;">Scopri i diversi modi per configurare route e gestire HTTPS</p>
+                    <h2>Routing and Advanced Configuration</h2>
+                    <p style="color: #94a3b8;">Learn about the different ways to configure routes and manage HTTPS</p>
                 </div>
                 <div class="code-container">
                     <div class="code-example">
@@ -666,11 +785,11 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
   {
     <span class="string">"Path"</span>: <span class="string">"/about"</span>,
     <span class="string">"Method"</span>: <span class="string">"GET"</span>,
-    <span class="string">"HtmlResponse"</span>: <span class="string">"&lt;h1&gt;Chi siamo&lt;/h1&gt;"</span>
+    <span class="string">"HtmlResponse"</span>: <span class="string">"&lt;h1&gt;About Us&lt;/h1&gt;"</span>
   }
 ]
 
-<span class="comment">// Controller con attributi</span>
+<span class="comment">// Controller with attributes</span>
 <span class="keyword">public class</span> MyController 
 {
     [Route(<span class="string">"/login"</span>, HttpMethod.POST)]
@@ -681,14 +800,14 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
     }
 }
 
-<span class="comment">// HTTPS con certificati</span>
+<span class="comment">// HTTPS with certificates</span>
 <span class="keyword">var</span> host = <span class="keyword">new</span> Host(<span class="string">"127.0.0.1"</span>, <span class="number">443</span>, 
     <span class="string">"C:\\certs\\netiqo.pfx"</span>, <span class="string">"password"</span>);</code></pre>
                     </div>
                     <div class="code-content">
-                        <h2>Flessibilità Massima</h2>
-                        <p>Netiqo Framework supporta diversi approcci per definire le route: da file JSON/XML per configurazioni esterne, fino agli attributi sui metodi per un approccio più tradizionale.</p>
-                        <p>Il supporto HTTPS nativo con certificati PFX permette connessioni sicure automatiche tramite SslStream, ideale per applicazioni production-ready.</p>
+                        <h2>Maximum Flexibility</h2>
+                        <p>Netiqo Framework supports several approaches to defining routes: from JSON/XML files for external configurations to attributes on methods for a more traditional approach.</p>
+                        <p>Native HTTPS support with PFX certificates enables automatic secure connections via SslStream, ideal for production-ready applications.</p>
                     </div>
                 </div>
             </div>
@@ -700,38 +819,38 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Netiqo Framework</h3>
-                    <p style="color: #94a3b8; margin-bottom: 1rem;">Micro-framework .NET per web server leggeri e self-hosted.</p>
+                    <p style="color: #94a3b8; margin-bottom: 1rem;">.NET micro-framework for lightweight, self-hosted web servers.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Risorse</h3>
-                    <a href="#docs">Documentazione</a>
-                    <a href="#examples">Esempi di Codice</a>
+                    <h3>Resources</h3>
+                    <a href="#docs">Documentation</a>
+                    <a href="#examples">Code Examples</a>
                     <a href="#api">API Reference</a>
                     <a href="#tutorials">Tutorial</a>
                 </div>
                 <div class="footer-section">
                     <h3>Community</h3>
-                    <a href="#github">GitHub Repository</a>
-                    <a href="#issues">Segnala Bug</a>
-                    <a href="#discussions">Discussioni</a>
-                    <a href="#contribute">Contribuisci</a>
+                    <a href="#issues">Report Bug</a>
+                    <a href="#discussions">Discussions</a>
+                    <a href="#contribute">Contribute</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Supporto</h3>
+                    <h3>Support</h3>
                     <a href="#faq">FAQ</a>
-                    <a href="#contact">Contatti</a>
-                    <a href="#license">Licenza MIT</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#donate">💝 Donations</a>
+                    <a href="#license">License</a>
                     <a href="#changelog">Changelog</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Netiqo Framework. Tutti i diritti riservati.</p>
+                <p>&copy; 2025 Netiqo Framework. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling per i link di navigazione
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -757,7 +876,7 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
             }
         });
 
-        // Animazione cards al scroll
+        // Animation cards at scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -772,7 +891,7 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
             });
         }, observerOptions);
 
-        // Applica l'animazione alle cards
+        // Apply animation to cards
         document.querySelectorAll('.feature-card, .step-card').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
@@ -780,7 +899,7 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
             observer.observe(card);
         });
 
-        // Effetto parallax per l'hero
+        // Parallax effect for the hero
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
@@ -789,7 +908,7 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
             }
         });
 
-        // Animazione contatore per i numeri degli step
+        // Counter animation for step numbers
         const animateNumbers = () => {
             const stepNumbers = document.querySelectorAll('.step-number');
             stepNumbers.forEach((number, index) => {
@@ -802,7 +921,7 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
             });
         };
 
-        // Trigger animazione numeri quando la sezione è visibile
+        // Trigger animation numbers when section is visible
         const stepsSection = document.querySelector('.getting-started');
         if (stepsSection) {
             const stepsObserver = new IntersectionObserver((entries) => {
@@ -817,18 +936,17 @@ host.RegisterRoutesFromAttributes(<span class="keyword">new</span> MyController(
             stepsObserver.observe(stepsSection);
         }
     </script>
-  <script>
-  // Lista di URL validi
+
+ <script>
+  // List of valid URLs
   const validSlugs = ['/', '/index.html', '/docs', '/examples', '/download'];
 
   const currentPath = window.location.pathname;
 
-  // Se lo slug non è valido, reindirizza a 404.html
+  // If the slug is invalid, redirect to 404.html
   if (!validSlugs.includes(currentPath)) {
     window.location.href = '/404.html';
   }
-</script>
-
 </script>
 
 </body>
