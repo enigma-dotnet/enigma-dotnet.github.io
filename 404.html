@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Pagina Non Trovata | Netiqo Framework</title>
+    <title>404 - Page Not Found | Netiqo Framework</title>
     <style>
         * {
             margin: 0;
@@ -356,17 +356,17 @@
     <div class="container">
         <div class="error-content">
             <div class="error-number">404</div>
-            <h1 class="error-title">Pagina Non Trovata</h1>
-            <p class="error-subtitle">Oops! La risorsa che stai cercando non esiste.</p>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-subtitle">Oops! The resource you are looking for does not exist.</p>
             <p class="error-description">
-                Il server Netiqo non è riuscito a trovare la route richiesta. 
-                Questo potrebbe essere dovuto a un URL errato, una route non registrata, 
-                o la risorsa potrebbe essere stata spostata o rimossa.
+                The Netiqo server could not find the requested route. 
+                This could be due to an incorrect URL, an unregistered route, 
+                or the resource may have been moved or removed.
             </p>
             
             <div class="error-actions">
-                <a href="/" class="btn btn-primary">🏠 Torna alla Home</a>
-                <a href="javascript:history.back()" class="btn btn-secondary">← Pagina Precedente</a>
+                <a href="/" class="btn btn-primary">🏠 Back to Home</a>
+                <a href="javascript:history.back()" class="btn btn-secondary">← Previous Page</a>
             </div>
 
             <div class="tech-icons">
@@ -379,7 +379,7 @@
     </div>
 
     <script>
-        // Effetto parallax per gli elementi fluttuanti
+        // Parallax effect for floating elements
         window.addEventListener('mousemove', (e) => {
             const elements = document.querySelectorAll('.floating-element');
             const x = e.clientX / window.innerWidth;
@@ -394,7 +394,7 @@
             });
         });
 
-        // Animazione al caricamento
+        // Loading animation
         document.addEventListener('DOMContentLoaded', () => {
             // Aggiungi un leggero ritardo per l'animazione della pagina
             setTimeout(() => {
@@ -402,7 +402,7 @@
             }, 100);
         });
 
-        // Effetto click sui tech icons
+        // Click effect on tech icons
         document.querySelectorAll('.tech-icon').forEach((icon, index) => {
             icon.addEventListener('click', () => {
                 icon.style.transform = 'scale(1.2) translateY(-3px)';
@@ -412,7 +412,7 @@
             });
         });
 
-        // Effetto hover sui bottoni
+        // Hover effect on buttons
         document.querySelectorAll('.btn').forEach(btn => {
             btn.addEventListener('mouseenter', () => {
                 btn.style.filter = 'brightness(1.1)';
@@ -423,8 +423,7 @@
             });
         });
 
-        // Countdown automatico per redirect (opzionale - decommentare se necessario)
-        /*
+        // Automatic countdown for redirect (optional - uncomment if necessary)
         let countdown = 10;
         const countdownElement = document.createElement('p');
         countdownElement.style.marginTop = '2rem';
@@ -433,7 +432,7 @@
         document.querySelector('.error-content').appendChild(countdownElement);
         
         const timer = setInterval(() => {
-            countdownElement.textContent = `Reindirizzamento automatico alla home in ${countdown} secondi...`;
+            countdownElement.textContent = `Automatic redirection to home in ${countdown} seconds...`;
             countdown--;
             
             if (countdown < 0) {
@@ -441,7 +440,7 @@
                 window.location.href = '/';
             }
         }, 1000);
-        */
+        
     </script>
 </body>
 </html>
