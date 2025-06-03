@@ -445,6 +445,29 @@
                 padding: 0 1rem;
             }
         }
+
+        /* Btn */
+    
+    .back-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--white);
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      opacity: 0;
+      animation: slideUp 1s ease 0.4s forwards;
+    }
+    
+    .back-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+        
     </style>
 </head>
 <body>
@@ -455,6 +478,7 @@
                 <div class="logo">Netiqo Framework</div>
                 <h1>Changelog</h1>
                 <p>Track the evolution of Netiqo Framework with detailed release notes, new features, improvements, and bug fixes for each version.</p>
+                <a href="https://netiqoframework.com" class="back-btn">← Back to Main Site</a>
             </div>
         </div>
     </section>
