@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog | Netiqo Framework</title>
+
+
+
+<!-- Meta Description -->
+<meta name="description" content="Netiqo is a framework created with the idea of simplifying the work of developers. Everything Asp.Net Core does in a small framework. Discover it now.">
+
+<!-- Open Graph (Facebook, LinkedIn, Discord, ecc.) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Netiqo Framework">
+<meta property="og:description" content="Follow framework movements, updates, and new extensions directly from here.">
+<meta property="og:url" content="https://netiqoframework.com/">
+<meta property="og:image" content="/assets/preview.jpeg">
+    
+    <link rel="icon" type="image/x-icon" href="/assets/icon.ico">
+  
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-accent: linear-gradient(135deg, var(--accent), var(--primary));
+            --success: #10b981;
+            --success-bg: #d1fae5;
+            --danger: #ef4444;
+            --danger-bg: #fee2e2;
+            --warning: #f59e0b;
+            --warning-bg: #fef3c7;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        header {
+            display: none;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 4rem 0 3rem 0;
+            text-align: center;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-header .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            animation: slideUp 0.8s ease 0.1s forwards;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: slideUp 0.8s ease 0.2s forwards;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Timeline */
+        .timeline-section {
+            padding: 4rem 0;
+            background: var(--light);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 80px;
+            opacity: 0;
+            animation: slideInLeft 0.6s ease forwards;
+        }
+        
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: -49px;
+            top: 8px;
+            width: 18px;
+            height: 18px;
+            background: var(--white);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+        
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 15px solid var(--white);
+        }
+        
+        .version-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .version-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .version-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+        
+        .version-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .status-badge {
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .status-badge.released {
+            background: var(--success);
+            color: white;
+        }
+        
+        .status-badge.coming-soon {
+            background: var(--danger);
+            color: white;
+        }
+        
+        .status-badge.in-development {
+            background: var(--warning);
+            color: white;
+        }
+        
+        .change-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .change-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        
+        .change-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .change-type {
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            flex-shrink: 0;
+        }
+        
+        .change-type.feature {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+        
+        .change-type.improvement {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+        
+        .change-type.fix {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .change-type.breaking {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .change-description {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .timeline-marker {
+                left: -39px;
+            }
+            
+            .timeline-content::before {
+                left: -10px;
+                border-right-width: 10px;
+            }
+            
+            .version-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <div class="logo">Netiqo Framework</div>
+                <h1>Changelog</h1>
+                <p>Track the evolution of Netiqo Framework with detailed release notes, new features, improvements, and bug fixes for each version.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="timeline">
+                <!-- Version 2.0.0 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="version-header">
+                            <div class="version-info">
+                                <h3 class="version-number">v2.0.0</h3>
+                                <span class="version-date">Coming Soon</span>
+                            </div>
+                            <span class="status-badge coming-soon">Coming Soon</span>
+                        </div>
+                        <ul class="change-list">
+                            <li>
+                                <span class="change-type feature">New</span>
+                                <span class="change-description">Remote library loading system for managed and unmanaged libraries via URL</span>
+                            </li>
+                            <li>
+                                <span class="change-type feature">New</span>
+                                <span class="change-description">In-memory library loading and execution capabilities</span>
+                            </li>
+                            <li>
+                                <span class="change-type improvement">Enhanced</span>
+                                <span class="change-description">Expanded framework for more generic use cases beyond web servers</span>
+                            </li>
+                            <li>
+                                <span class="change-type feature">New</span>
+                                <span class="change-description">Dynamic code execution from remote sources</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Version 1.0.0 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="version-header">
+                            <div class="version-info">
+                                <h3 class="version-number">v1.0.0</h3>
+                                <span class="version-date">Initial Release</span>
+                            </div>
+                            <span class="status-badge released">Released</span>
+                        </div>
+                        <ul class="change-list">
+                            <li>
+                                <span class="change-type feature">New</span>
+                                <span class="change-description">🚀 Self-Hosted Lightweight - Create embedded or local web servers accessible via Wi-Fi or LAN without complex configurations</span>
+                            </li>
+                            <li>
+                                <span class="change-type feature">New</span>
+                                <span class="change-description">🛣️ Advanced Routing - Full support for GET/POST routing with logging from code, JSON, XML or attributes</span>
+                            </li>
+                            <li>
+                                <span class="change-type feature">New</span>
+                                <span class="change-description">🔐 HTTPS Integrated - Native support for SSL/TLS certificates with automatic configuration via SslStream</span>
+                            </li>
+                            <li>
+                                <span class="change-type feature">New</span>
+                                <span class="change-description">📁 Static Files - Automatic service of static files from the wwwroot/ folder for CSS, JS, images, and more</span>
+                            </li>
+                            <li>
+                                <span class="change-type feature">New</span>
+                                <span class="change-description">⚙️ Configurable Host - Flexible setup with customizable IP, port, certificates and logging for every need</span>
+                            </li>
+                            <li>
+                                <span class="change-type feature">New</span>
+                                <span class="change-description">🎯 Dynamic HTML - Static or dynamic HTML responses with custom handlers and form parsing</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Framework</h3>
+                    <a href="#getting-started">Getting Started</a>
+                    <a href="/docs">Documentation</a>
+                    <a href="#examples">Examples</a>
+                    <a href="#changelog">Changelog</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <a href="#github">GitHub</a>
+                    <a href="#discord">Discord</a>
+                    <a href="#forum">Forum</a>
+                    <a href="#blog">Blog</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="#help">Help Center</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#bug-report">Report Bug</a>
+                    <a href="#feature-request">Feature Request</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="/download/Netiqo.Framework.dll">Download</a>
+                    <a href="#tutorials">Tutorials</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Netiqo Framework. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
