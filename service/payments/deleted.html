@@ -380,6 +380,13 @@
     <script>
         // Enhanced entrance animation
         document.addEventListener('DOMContentLoaded', function() {
+    
+            const ref = document.referrer;
+            const expected = "https://www.paypal.com/donate?hosted_button_id=577MN4YU573MQ";
+
+            if (ref !== expected) {
+                 window.location.href = "/"; // error
+            }
             setTimeout(() => {
                 document.querySelector('.cancelled-card').style.transform = 'translateY(0) scale(1)';
             }, 100);
@@ -396,7 +403,7 @@
             const deltaY = (e.clientY - centerY) * 0.008;
             
             card.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(1)`;
-        });
+        });     
     </script>
 </body>
 </html>
