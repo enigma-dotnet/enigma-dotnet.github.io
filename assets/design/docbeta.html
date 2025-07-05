@@ -5,6 +5,8 @@
     <title>Documentation | Netiqo Framework</title>
 
     <link rel="stylesheet" href="/assets/design/all.min.css">
+    <link href="/assets/design/css2" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
 <!-- Meta Description -->
@@ -706,7 +708,7 @@ host.RegisterRoute(<span class="code-keyword">new</span> <span class="code-class
 &nbsp;&nbsp;&nbsp;&nbsp;htmlResponse: <span class="code-string">"&lt;h1&gt;Homepage&lt;/h1&gt;"</span>));<br>
 <br>
 <span class="code-keyword">await</span> host.StartAsync();</code>
-                    <button class="copy-btn">Copia</button>
+                    <button class="copy-btn">Copy</button>
                 </div>
                 
                 <div class="note">
@@ -1410,9 +1412,9 @@ library.LoadLibraryFromWeb(<br>
                 
                 navigator.clipboard.writeText(code)
                     .then(() => {
-                        this.textContent = 'Copiato!';
+                        this.textContent = 'Copied!';
                         setTimeout(() => {
-                            this.textContent = 'Copia';
+                            this.textContent = 'Copy';
                         }, 2000);
                     })
                     .catch(err => {
