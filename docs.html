@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="it"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- saved from url=(0032)https://netiqoframework.com/docs -->
+<html lang="it" class=" vmlrhimki idc0_350"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentation | Netiqo Framework</title>
 
-    <link rel="stylesheet" href="/assets/design/all.min.css">
-    <link href="/assets/design/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./Documentation _ Netiqo Framework_files/all.min.css">
+    <link href="./Documentation _ Netiqo Framework_files/css2" rel="stylesheet">
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./Documentation _ Netiqo Framework_files/css2(1)" rel="stylesheet">
     
 <!-- Meta Description -->
 <meta name="description" content="Netiqo is a framework created with the idea of simplifying the work of developers. Everything Asp.Net Core does in a small framework. Discover it now.">
@@ -19,7 +20,7 @@
 <meta property="og:url" content="https://netiqoframework.com/docs">
 <meta property="og:image" content="/assets/preview.jpeg">
     
-    <link rel="icon" type="image/x-icon" href="/assets/icon.ico">
+    <link rel="icon" type="image/x-icon" href="https://netiqoframework.com/assets/icon.ico">
 
  
  <style>
@@ -705,9 +706,9 @@
             <i class="fas fa-bars"></i>
         </div>
         <div class="logo">
-               <img src="https://netiqoframework.com/assets/icon.png" alt="Netiqo Logo" class="logo-icon">
-            <span>Netiqo Framework | Docs <span class="version-badge">1.3.1</span></span>
-            <button class="modern-btn" onclick="window.location.href='https://netiqoframework.com/'">Back</button>
+               <img src="./Documentation _ Netiqo Framework_files/icon.png" alt="Netiqo Logo" class="logo-icon">
+            <span>Netiqo Framework | Docs <span class="version-badge">1.3.2</span></span>
+            <button class="modern-btn" onclick="window.location.href=&#39;https://netiqoframework.com/&#39;">Back</button>
         </div>
         <div class="search-bar">
             <i class="fas fa-search search-icon"></i>
@@ -722,6 +723,9 @@
             <div class="sidebar-item" data-section="getting-started">Getting Started</div>
             <div class="sidebar-item" data-section="host-class">Host Class</div>
             <div class="sidebar-item" data-section="route-class">Route Class</div>
+            <div class="sidebar-item" data-section="bearer-class">Bearer Class</div>
+            <div class="sidebar-item" data-section="connection-class">Connection Class</div>
+            <div class="sidebar-item" data-section="requiresauth-attribute">RequiresAuth Attribute</div>
             <div class="sidebar-item" data-section="route-attribute">Route Attribute</div>
             <div class="sidebar-item" data-section="http-methods">HTTP Methods</div>
             <div class="sidebar-item" data-section="device-class">Device Class</div>
@@ -894,6 +898,194 @@ host.RegisterRoute(<span class="code-keyword">new</span> <span class="code-class
             </div>
         </section>
 
+<!-- Bearer Class Section -->
+        <section class="content-section" id="bearer-class">
+            <div class="content-header">
+                <div class="icon">
+                    <i class="fas fa-route"></i>
+                </div>
+                <div>
+                    <h1>Bearer Class</h1>
+                    <p>The class that allows you to secure your API.</p>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2><i class="fas fa-terminal"></i> Bearer Functions</h2>
+                
+                <div class="code-block">
+                    <code><span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">bool</span> <span class="code-class">IsAuthorized</span>(<span class="code-keyword">string</span> bearerHeader)
+ </code>
+                </div>
+                
+                <h3><i class="fas fa-info-circle"></i> Parameters</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>bearerHeader</strong>: Check if the provided token is valid</li>
+                </ul>
+                
+                <div class="note">
+                    <div class="note-title">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Important Note</span>
+                    </div>
+                    <p>Do not use this function if you already use the "[RequiresAuth]" flag, as the two checks would conflict. The difference is that this one is manual, while the flag does it automatically..</p>
+                </div>
+
+                <div class="code-block">
+                    <code><span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="code-class">AddToken</span>(<span class="code-keyword">string</span> token)
+                </code>
+                </div>
+                
+                <h3><i class="fas fa-info-circle"></i> Parameters</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>token</strong>: Adds a token to the list of valid tokens.</li>
+                </ul>
+
+                <div class="code-block">
+                    <code><span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="code-class">RemoveToken</span>(<span class="code-keyword">string</span> token)
+                </code>
+                </div>
+                
+                <h3><i class="fas fa-info-circle"></i> Parameters</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>token</strong>: Removes the token from the list of valid tokens.</li>
+                </ul>
+
+                <div class="code-block">
+                    <code><span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="code-class">Clear</span>()
+                </code>
+                </div>
+                
+                <h3><i class="fas fa-info-circle"></i> General</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>Removes all valid tokens from the list.</strong></li>
+                </ul>
+
+            </div>
+        </section>
+
+<!-- Connection Class Section -->
+        <section class="content-section" id="connection-class">
+            <div class="content-header">
+                <div class="icon">
+                    <i class="fas fa-route"></i>
+                </div>
+                <div>
+                    <h1>Connection Class</h1>
+                    <p>Connection class that allows you to create databases on the server.</p>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2><i class="fas fa-terminal"></i> Connection Constructor</h2>
+                
+                <div class="code-block">
+                    <code><span class="code-keyword">public</span> <span class="code-class">Connection</span>(<span class="code-keyword">string</span> authReadWriteDbToken)</code>
+                </div>
+                
+                <h3><i class="fas fa-info-circle"></i> Parameters</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>authReadWriteDbToken</strong>: Enter the token that will be used to authenticate database modification requests.</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2><i class="fas fa-terminal"></i> Connection Functions & Events</h2>
+                
+                <div class="code-block">
+                   <span class="code-keyword">public</span> <span class="code-keyword">async</span> <span class="code-class">Task</span>&lt;<span class="code-keyword">string</span>&gt; CreateAsync(<span class="code-keyword">string</span> dbName, <span class="code-keyword">List</span>&lt;<span class="code-keyword">object</span>&gt; initialValues = null) </div>
+                
+                <h3><i class="fas fa-info-circle"></i> Parameters</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>dbName</strong>: Database name.</li>
+                    <li><strong>initialValues</strong>: initial database values.</li>
+                </ul>
+
+                <div class="code-block">
+                    <span class="code-keyword">public</span> <span class="code-keyword">async</span> <span class="code-class">Task</span>&lt;<span class="code-keyword">List</span>&lt;<span class="code-keyword">object</span>&gt;&gt; GetValuesAsync(<span class="code-keyword">string</span> dbName) </div>
+
+                <h3><i class="fas fa-info-circle"></i> Parameters</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>dbName</strong>: The database name is required to obtain all data from it in a list.</li>
+                </ul>
+
+                <div class="code-block">
+                <span class="code-keyword">public</span> <span class="code-keyword">bool</span> <span class="code-class">Contains</span>(<span class="code-keyword">string</span> dbName) </div>
+
+                <h3><i class="fas fa-info-circle"></i> Parameters</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>dbName</strong>: Required for verifying whether data exists in the database through an internal check.</li>
+                </ul>
+
+ <div class="code-block">
+                <span class="code-keyword">public</span> <span class="code-keyword">async</span> <span class="code-class">Task</span>&lt;<span class="code-keyword">string</span>&gt; RemoveAsync(<span class="code-keyword">string</span> dbName) </div>
+
+                <h3><i class="fas fa-info-circle"></i> Parameters</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>dbName</strong>: name to remove a database.</li>
+                </ul>
+
+                <div class="code-block">
+                <span class="code-keyword">public</span> <span class="code-keyword">async</span> <span class="code-class">Task</span>&lt;<span class="code-keyword">string</span>&gt; SetAsync(<span class="code-keyword">string</span> dbName, <span class="code-keyword">int</span> index, <span class="code-keyword">object</span> value)</div>
+
+                <h3><i class="fas fa-info-circle"></i> Parameters</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>dbName</strong>: name to access the correct database.</li>
+                    <li><strong>index</strong>: to access the exact value index.</li>
+                    <li><strong>value</strong>: new value to insert.</li>
+                </ul>
+
+                <div class="code-block">
+                <span class="code-keyword">public</span> <span class="code-keyword">void</span> <span class="code-class">Clear</span>()</div>
+
+                <h3><i class="fas fa-info-circle"></i> General</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>Deletes all databases from the connection.</strong></li>
+                </ul>
+
+            </div>
+
+        </section>
+
+<!-- RequiresAuth Attribute Section -->
+        <section class="content-section" id="requiresauth-attribute">
+            <div class="content-header">
+                <div class="icon">
+                    <i class="fas fa-tag"></i>
+                </div>
+                <div>
+                    <h1>RequiresAuth Attribute</h1>
+                    <p>Defines whether the route requires token authentication.</p>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2><i class="fas fa-code"></i> Example of RequiresAuth Attribute</h2>
+                
+                <div class="code-block">
+                    <code><span class="code-comment">// Definition of a controller</span><br>
+<span class="code-keyword">public class</span> <span class="code-class">TestController</span><br>
+{
+    <br>
+    &nbsp;&nbsp;<span class="code-keyword">[RequiresAuth]</span><br> 
+&nbsp;&nbsp;<span class="code-keyword">[Route(</span><span class="code-string">"/protected"</span>, <span class="code-class">Request</span>.HttpMethod.POST)<span class="code-keyword">]</span><br>
+&nbsp;&nbsp;<span class="code-keyword">public string</span> <span class="code-function">Test</span>(<span class="code-keyword">RequestContext</span> ctx) =&gt; <span class="code-string">"&lt;h1&gt;Authentication successful&lt;/h1&gt;"</span>;<br>
+}<br><br>
+<span class="code-comment">// Controller registration</span><br>
+host.RegisterRoutesFromAttributes(<span class="code-keyword">new</span> <span class="code-class">TestController</span>());</code>
+                    <button class="copy-btn">Copy</button>
+                </div>
+                
+                <div class="note">
+                    <div class="note-title">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Declarative Approach</span>
+                    </div>
+                    <p>Set this flag only when you want to set token authentication. With this setting, the “Test” function and its operations will only be executed if authentication is successful..</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Route Attribute Section -->
         <section class="content-section" id="route-attribute">
             <div class="content-header">
@@ -912,9 +1104,10 @@ host.RegisterRoute(<span class="code-keyword">new</span> <span class="code-class
                 <div class="code-block">
                     <code><span class="code-comment">// Definition of a controller</span><br>
 <span class="code-keyword">public class</span> <span class="code-class">TestController</span><br>
-{<br>
+{
+    <br>
 &nbsp;&nbsp;<span class="code-keyword">[Route(</span><span class="code-string">"/api/test"</span>, <span class="code-class">Request</span>.HttpMethod.GET)<span class="code-keyword">]</span><br>
-&nbsp;&nbsp;<span class="code-keyword">public string</span> <span class="code-function">Test</span>(<span class="code-keyword">string</span> body) =&gt; <span class="code-string">"&lt;h1&gt;Test&lt;/h1&gt;"</span>;<br>
+&nbsp;&nbsp;<span class="code-keyword">public string</span> <span class="code-function">Test</span>(<span class="code-keyword">RequestContext</span> ctx) =&gt; <span class="code-string">"&lt;h1&gt;Test&lt;/h1&gt;"</span>;<br>
 }<br><br>
 <span class="code-comment">// Controller registration</span><br>
 host.RegisterRoutesFromAttributes(<span class="code-keyword">new</span> <span class="code-class">TestController</span>());</code>
@@ -1253,7 +1446,7 @@ library.LoadLibraryFromWeb(<br>
                         <div class="feature-icon">
                             <i class="fas fa-bolt"></i>
                         </div>
-                        <h3>Lightweight & Performing</h3>
+                        <h3>Lightweight &amp; Performing</h3>
                         <p>Lightweight and high-performance HTTP TCP server.</p>
                     </div>
                     
@@ -1345,7 +1538,7 @@ library.LoadLibraryFromWeb(<br>
 
 
 <!-- New Features Section -->
-        <section class="content-section" id="new-features">
+        <section class="content-section active" id="new-features">
             <div class="content-header">
                 <div class="icon">
                     <i class="fas fa-gift"></i>
@@ -1360,6 +1553,7 @@ library.LoadLibraryFromWeb(<br>
                 <h2><i class="fas fa-star"></i> What's new</h2>
                 
                 <div class="feature-grid">
+                    
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-satellite-dish"></i>
@@ -1397,7 +1591,7 @@ library.LoadLibraryFromWeb(<br>
 
 
         <footer>
-            <p>Netiqo Framework v1.3.1 - Official documentation © 2025</p>
+            <p>Netiqo Framework v1.3.2 - Official documentation © 2025</p>
         </footer>
     </main>
 
@@ -1497,5 +1691,6 @@ library.LoadLibraryFromWeb(<br>
         // Show getting started content by default
         document.querySelector('.sidebar-item.active').click();
     </script>
+
 
 </body></html>
