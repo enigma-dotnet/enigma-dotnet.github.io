@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,6 @@
 
 <meta name="description" content="Netiqo 2.0 is currently under construction. A next-generation infrastructure is being prepared. Something powerful is coming.">
 
-  <!-- Open Graph (Facebook, LinkedIn, Discord, ecc.) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Netiqo Framework">
 <meta property="og:description" content="The new modern Framework for APIs, microservices and web-apps. Fast and lightweight.">
@@ -54,7 +52,6 @@ body {
   overflow: hidden;
 }
 
-/* subtle noise */
 body::before {
   content:"";
   position: fixed;
@@ -67,7 +64,6 @@ body::before {
   z-index: -1;
 }
 
-/* floating glow shapes */
 .glow {
   position: absolute;
   border-radius: 999px;
@@ -84,7 +80,6 @@ body::before {
   50% { transform: translate(30px,-20px); }
 }
 
-/* main card */
 .card {
   width: min(92vw, 820px);
   background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.045));
@@ -97,7 +92,6 @@ body::before {
   position: relative;
 }
 
-/* badge */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -112,7 +106,6 @@ body::before {
   margin-bottom: 1.6rem;
 }
 
-/* title */
 h1 {
   font-size: clamp(2.4rem, 4.8vw, 4rem);
   font-weight: 900;
@@ -123,7 +116,6 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
-/* text */
 p {
   font-size: 1.1rem;
   line-height: 1.75;
@@ -132,7 +124,6 @@ p {
   margin: 0 auto 2.2rem;
 }
 
-/* status bar */
 .status {
   display: flex;
   justify-content: center;
@@ -151,7 +142,6 @@ p {
   color: rgba(226,232,240,.9);
 }
 
-/* loader */
 .loader {
   width: 88px;
   height: 88px;
@@ -166,17 +156,73 @@ p {
   to { transform: rotate(360deg); }
 }
 
-/* footer text */
+/* ── Download button ── */
+.download-wrap {
+  margin-bottom: 2.2rem;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .9rem 2rem;
+  border-radius: 14px;
+  background: var(--grad);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: .02em;
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+  box-shadow: 0 0 32px rgba(99,102,241,.45), 0 8px 24px rgba(0,0,0,.35);
+}
+
+.btn-download::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.18), transparent 60%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.btn-download:hover {
+  transform: translateY(-2px) scale(1.025);
+  box-shadow: 0 0 48px rgba(99,102,241,.65), 0 12px 32px rgba(0,0,0,.4);
+}
+
+.btn-download:active {
+  transform: translateY(0) scale(.98);
+  opacity: .9;
+}
+
+/* download icon */
+.btn-download svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .footer {
   font-size: .85rem;
   color: var(--soft);
   opacity: .9;
 }
 
-/* motion safety */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
 </style>
 </head>
 
@@ -208,6 +254,27 @@ p {
     This is not a delay.<br>
     It is preparation.
   </p>
+
+  <div class="download-wrap">
+    <a class="btn-download" href="/download/Netiqo.Framework.dll" download>
+      <svg viewBox="0 0 24 24">
+        <line x1="12" y1="3" x2="12" y2="15"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="4" y1="21" x2="20" y2="21"/>
+      </svg>
+      Download Netiqo Framework (1.3.2)
+    </a>
+  </div>
+
+ <div class="download-wrap">
+  <a class="btn-download" href="/docs">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+    </svg>
+    Read Documentation
+  </a>
+</div>
 
   <div class="footer">
     © 2026 Netiqo — Private Infrastructure
